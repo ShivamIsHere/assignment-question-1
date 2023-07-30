@@ -18,7 +18,9 @@ import Card from "../component/card/Card";
 const Dashboard = () => {
   const [currency, setCurrency] = useState("EUR");
   const [searchText, setSearchText] = useState("");
+  // eslint-disable-next-line
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
+  // eslint-disable-next-line
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
 
   return (

@@ -9,7 +9,7 @@ import styles from "./List.module.css";
 const List = ({ rows, timestamps , currency , searchText}) => {
 
   const filteredRows = rows.filter((row) => {
-    return row["&id"].toLowerCase().includes(searchText.toLowerCase());
+    return row["&id"].toUpperCase().includes(searchText.toUpperCase());
   });
   console.log("Filtering:", filteredRows);
   
