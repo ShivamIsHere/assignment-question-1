@@ -6,7 +6,13 @@ import ListHeaderCell from "./ListHeaderCell";
 
 import styles from "./List.module.css";
 
-const List = ({ rows, timestamps , currency }) => {
+const List = ({ rows, timestamps , currency , searchText}) => {
+
+  const filteredRows = rows.filter((row) => {
+    return row["&id"].toLowerCase().includes(searchText.toLowerCase());
+  });
+  console.log("Filtering:", filteredRows);
+  
   return (
     <table className={styles.container}>
       <thead>
@@ -20,21 +26,26 @@ const List = ({ rows, timestamps , currency }) => {
       </thead>
       <tbody>
         {rows.map((row) => {
+          
           const timestamp = timestamps.find(
             (orderSubmittedDate) => orderSubmittedDate["&id"] === row["&id"]
           );
           const orderSubmitted = timestamp
             ? timestamp.timestamps.orderSubmitted
             : null;
+
             
+          const SearchedElement = filteredRows.includes(row);
           return (
-            <ListRow>
+            SearchedElement && (
+              <ListRow>
               <ListRowCell>{row["&id"]}</ListRowCell>
               <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
               <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>
               <ListRowCell>{orderSubmitted}</ListRowCell>
               <ListRowCell>{row.bestExecutionData.orderVolume[currency]}</ListRowCell>
             </ListRow>
+            )
           );
         })}
       </tbody>
