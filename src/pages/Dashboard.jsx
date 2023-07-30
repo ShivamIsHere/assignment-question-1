@@ -2,7 +2,7 @@ import { useState } from "react";
 
 // Data
 import mockData from "../assets/data.json";
-import data from ".././assets/data.json"
+import data from ".././assets/data.json";
 import timestamps from "../assets/timeStamps.json";
 
 // Components
@@ -24,12 +24,12 @@ const Dashboard = () => {
   return (
     <div>
       <div className={styles.header}>
+        <HeaderTitle
+          primaryTitle="Orders"
+          secondaryTitle={`${data.results.length} orders`}
+        />
+        {/* <HeaderTitle primaryTitle="Orders" secondaryTitle="6 orders" /> */}
 
-
-      <HeaderTitle primaryTitle="Orders" secondaryTitle={`${data.results.length} orders`}  />
-      {/* <HeaderTitle primaryTitle="Orders" secondaryTitle="6 orders" /> */}
-        
-        
         <div className={styles.actionBox}>
           <Search
             value={searchText}
@@ -53,11 +53,10 @@ const Dashboard = () => {
             title="Selected Order Timestamps"
           />
         </div>
-        <List rows={mockData.results} />
+        <List rows={mockData.results} timestamps={timestamps.results} />
       </div>
     </div>
   );
 };
-
 
 export default Dashboard;
