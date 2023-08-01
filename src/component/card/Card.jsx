@@ -1,4 +1,5 @@
 import styles from "./Card.module.css";
+import List from "../list/List";
 
 const Card = ({ cardData, title }) => {
   if (!cardData) return null;

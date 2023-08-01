@@ -23,6 +23,8 @@ const Dashboard = () => {
   // eslint-disable-next-line
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
 
+
+
   return (
     <div>
       <div className={styles.header}>
@@ -55,7 +57,7 @@ const Dashboard = () => {
             title="Selected Order Timestamps"
           />
         </div>
-        <List rows={mockData.results} timestamps={timestamps.results} currency={currency} searchText={searchText}/>
+        <List rows={mockData.results} timeStamp={timestamps.results} currency={currency} searchText={searchText} setSelectedOrderDetails={setSelectedOrderDetails} setSelectedOrderTimeStamps={setSelectedOrderTimeStamps} />
       </div>
     </div>
   );
