@@ -58,6 +58,7 @@ const Dashboard = () => {
           />
         </div>
         <List rows={mockData.results} timeStamp={timestamps.results} currency={currency} searchText={searchText} setSelectedOrderDetails={setSelectedOrderDetails} setSelectedOrderTimeStamps={setSelectedOrderTimeStamps} />
+        
       </div>
     </div>
   );

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
+import { storiesOf } from '@storybook/react';
+import Dashboard from '../pages/Dashboard';
 
 /**
  * Primary UI component for user interaction
@@ -48,3 +50,8 @@ Button.defaultProps = {
   size: 'medium',
   onClick: undefined,
 };
+
+
+
+
+storiesOf('Dashboard', module).add('Default', () => <Dashboard />);
