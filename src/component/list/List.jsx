@@ -44,9 +44,10 @@ const List = ({ rows, timeStamp , currency , searchText, setSelectedOrderDetails
           return (
             SearchedElement && (
               
-              <ListRow>
+              <ListRow rows={row.executionDetails
+              } timeStamp={timestamp.timestamps} setSelectedOrderDetails={setSelectedOrderDetails} setSelectedOrderTimeStamps={setSelectedOrderTimeStamps}>
               <ListRowCell  >
-                  <span key={row["&id"]}
+                  {/* <span key={row["&id"]}
                     onClick={() => {
                       const orderDetails = {
                         buySellIndicator: row.executionDetails.buySellIndicator,
@@ -62,9 +63,9 @@ const List = ({ rows, timeStamp , currency , searchText, setSelectedOrderDetails
                       setSelectedOrderDetails(orderDetails);
                       setSelectedOrderTimeStamps(timeStamps);
                     }}
-                  >
+                  > */}
                     {row["&id"]}
-                  </span>
+                  {/* </span> */}
                 </ListRowCell>
               <ListRowCell>{row.executionDetails.buySellIndicator}</ListRowCell>
               <ListRowCell>{row.executionDetails.orderStatus}</ListRowCell>
