@@ -14,7 +14,7 @@ import List from "../component/list/List";
 // Styles
 import styles from "./Dashboard.module.css";
 import Card from "../component/card/Card";
-import { object } from "prop-types";
+
 
 const Dashboard = () => {
   const [currency, setCurrency] = useState("EUR");
@@ -43,7 +43,7 @@ const Dashboard = () => {
           />
           <Dropdown
             // options={["GBP", "USD", "JPY", "EUR"]}
-            option={[...curr]}
+            options={curr}
             onChange={(e) => setCurrency(e.target.value)}
             selectedItem={currency}
           />

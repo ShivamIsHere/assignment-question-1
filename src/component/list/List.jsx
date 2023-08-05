@@ -9,7 +9,7 @@ import styles from "./List.module.css";
 
 
 const List = ({ rows, timeStamp , currency , searchText, setSelectedOrderDetails, setSelectedOrderTimeStamps}) => {
-  
+  let ct=0;
   
   const filteredRows = rows.filter((row) => {
     return row["&id"].toUpperCase().includes(searchText.toUpperCase());
@@ -45,7 +45,7 @@ const List = ({ rows, timeStamp , currency , searchText, setSelectedOrderDetails
             SearchedElement && (
               
               <ListRow rows={row.executionDetails
-              } timeStamp={timestamp.timestamps} setSelectedOrderDetails={setSelectedOrderDetails} setSelectedOrderTimeStamps={setSelectedOrderTimeStamps}>
+              }  key={ct++} timeStamp={timestamp.timestamps} setSelectedOrderDetails={setSelectedOrderDetails} setSelectedOrderTimeStamps={setSelectedOrderTimeStamps}>
               <ListRowCell  >
                   {/* <span key={row["&id"]}
                     onClick={() => {
