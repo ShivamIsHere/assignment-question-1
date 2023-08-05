@@ -14,6 +14,7 @@ import List from "../component/list/List";
 // Styles
 import styles from "./Dashboard.module.css";
 import Card from "../component/card/Card";
+import { object } from "prop-types";
 
 const Dashboard = () => {
   const [currency, setCurrency] = useState("EUR");
@@ -22,6 +23,7 @@ const Dashboard = () => {
   const [selectedOrderDetails, setSelectedOrderDetails] = useState({});
   // eslint-disable-next-line
   const [selectedOrderTimeStamps, setSelectedOrderTimeStamps] = useState({});
+  const curr=Object.keys(mockData.results[0].bestExecutionData.orderVolume);
 
 
 
@@ -40,7 +42,8 @@ const Dashboard = () => {
             onChange={(e) => setSearchText(e.target.value)}
           />
           <Dropdown
-            options={["GBP", "USD", "JPY", "EUR"]}
+            // options={["GBP", "USD", "JPY", "EUR"]}
+            option={[...curr]}
             onChange={(e) => setCurrency(e.target.value)}
             selectedItem={currency}
           />
